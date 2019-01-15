@@ -11,7 +11,7 @@
 <% posts.forEach(function(post) {%>
     <div class="container">
         <h1><%= post.title %></h1>
-        <p class="post"><%= post.post %></p><a href="/posts/<%= post.title %>">Read More</a>
+        <p><%= post.post.substring(0, 99)%>...<a href="/posts/<%= post.title %>"> Read More</a></p>
     </div>
 <% }) %>
 
