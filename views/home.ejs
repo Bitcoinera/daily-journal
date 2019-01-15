@@ -1,0 +1,23 @@
+<%- include("partials/header") -%>
+
+<div class=container>
+    <h1>Welcome! This is my blog</h1>
+
+    <p>
+        <%= content%>
+    </p>
+</div>
+
+<% posts.forEach(function(post) {%>
+    <div class="container">
+        <h1><%= post.title %></h1>
+        <p><%= post.post %><a href="/post/<%= post.title %>">Read More</a></p>
+    </div>
+<% }) %>
+
+<div class="container">
+    <form action="/compose" method="GET">
+        <button class="btn btn-primary" type="submit" name="button">Compose</button>
+    </form>
+</div>
+<%- include("partials/footer") -%>
