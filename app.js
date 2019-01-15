@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const lodash = require("lodash");
+const _ = require("lodash");
 
 const app = express();
 
@@ -49,9 +49,15 @@ app.post("/", (req, res) => {
 
 app.get("/posts/:postId", (req, res) => {
     
-    let postId = req.params.postId;
+    const postId = _.lowerCase(req.params.postId);
 
-    res.render("posts", {postId: postId, posts: posts});
+    posts.forEach(function(post){
+        if(_.lowerCase(post.title) === postId){
+            res.render("posts", {postTitle: post.title, postBody: post.post});
+        } 
+    })
+
+    res.render("notfound");
 })
 
 app.get(/css/, (req, res) => {
