@@ -47,11 +47,11 @@ app.post("/", (req, res) => {
     res.redirect("/");
 })
 
-app.get("/post/:postId", (req, res) => {
+app.get("/posts/:postId", (req, res) => {
     
     let postId = req.params.postId;
 
-    res.render("post", {postId: postId, posts: posts});
+    res.render("posts", {postId: postId, posts: posts});
 })
 
 app.get(/css/, (req, res) => {
