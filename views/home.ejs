@@ -10,8 +10,12 @@
 
 <% posts.forEach(function(post) {%>
     <div class="container">
-        <h1><%= post.title %></h1>
+        <h1><a style="color: #212529" href="/posts/<%= post.title %>"><%= post.title %></a></h1>
+        <% if(post.post.length > 100) { %>
         <p><%= post.post.substring(0, 99)%>...<a href="/posts/<%= post.title %>"> Read More</a></p>
+        <% } else { %>
+        <p><%= post.post%></p>
+        <% } %>
     </div>
 <% }) %>
 
