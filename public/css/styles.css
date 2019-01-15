@@ -23,7 +23,6 @@ html {
 }
 
 .footer {
-    padding-bottom: 60px;
     position: absolute;
     text-align: center;
     bottom: 0;
@@ -36,4 +35,15 @@ html {
     margin-top: 25px;
     font-size: 12px;
     color: #fff;
+}
+
+.footer:hover {
+    background: none;
+}
+
+.post {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100ch;
 }
